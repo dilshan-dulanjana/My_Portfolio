@@ -157,3 +157,32 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+//////////////////////////////////////////////////
+// Initialize EmailJS with your public key
+emailjs.init("idjBN3S6fuEnKvQdR");
+
+// Handle the form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Collect form data
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Send email via EmailJS
+    emailjs.send("service_pgewbni", "template_3me11ni", {
+       
+        from_email: email,
+        subject: subject,
+        message: message,
+    })
+    .then(function (response) {
+        document.getElementById('response').innerText = "Email sent successfully!";
+    }, function (error) {
+        document.getElementById('response').innerText = "Failed to send email.";
+        console.error('Error:', error);
+    });
+});

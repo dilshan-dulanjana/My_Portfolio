@@ -525,17 +525,19 @@ I am not just building applications—I am building a strong personality in the 
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Form</h3>
 
-            <form action="#" class="form" >
+            <form id="contactForm" class="form" >
               <div class="input-wrapper">
                 <input
+                 id="subject"
                   type="text"
                   name="fullname"
                   class="form-input"
-                  placeholder="Full name"
+                  placeholder="subject"
                   required
                 />
 
                 <input
+                   id="email"
                   type="email"
                   name="email"
                   class="form-input"
@@ -545,6 +547,7 @@ I am not just building applications—I am building a strong personality in the 
               </div>
 
               <textarea
+                id="message"
                 name="message"
                 class="form-input"
                 placeholder="Your Message"
@@ -577,5 +580,7 @@ I am not just building applications—I am building a strong personality in the 
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
   </body>
 </html>
